@@ -1,5 +1,5 @@
 # PHP 8.2 bazaviy tasviridan foydalanish
-FROM php:8.3-fpm
+FROM php:8.2-fpm
 
 # Yordamchi kutubxonalarni o'rnatish
 RUN apt-get update && apt-get install -y \
