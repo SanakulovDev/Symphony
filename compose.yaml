@@ -23,7 +23,7 @@ services:
     volumes:
       - ./:/var/www/html:cached
     environment:
-      - APP_ENV=prod
+      - APP_ENV=dev
     working_dir: /var/www/html
     depends_on:
       - database
