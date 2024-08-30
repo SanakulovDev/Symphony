@@ -21,7 +21,15 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(UserRegistrationFormType::class, $user);
         $form->handleRequest($request);
 
+        if ($request->isMethod('POST')) {
+            $postData = $request->request->all(); // Barcha POST ma'lumotlarni olish
+            echo '<pre>';
+            print_r($postData);
+            echo '</pre>';
+            exit; // Ma'lumotlarni ko'rsatish uchun kodni to'xtatish
+        }
         if ($form->isSubmitted() && $form->isValid()) {
+
             // Parolni shifrlash
             $user->setPassword(
                 $passwordHasher->hashPassword(

@@ -3,6 +3,8 @@ services:
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
     container_name: symfony_db
+    ports:
+      - "7432:5432"
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
